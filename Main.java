@@ -1,6 +1,6 @@
  class MyCalculate {
      public static void main(String[] args) {
-         System.out.println("Mark Bot")
+         System.out.println("Mark не Bot")
 
   
  class Mmain{
