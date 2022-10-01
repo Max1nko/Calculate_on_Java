@@ -1,11 +1,29 @@
-import java.util.Scanner;
+package ru.alexanderklimov.testapplication;
 
-public class Main{
-    public static void main (String [] args){
-        System.out.println("введите число :");
-        Scanner inputone = new Scanner(System.in);
-        int input = inputone.nextInt();
-        int input1 = inputone.nextInt();
-        System.out.println(input + "+" + input1 + "=" + (input + input1) + "\n" + input + "-" + input1 + "=" + (input - input1) + "\n" + input1 + "-" + input + "=" + (input1 - input) + "\n" + input + "*" + input1 + "=" + (input * input1) + "\n" + input + ":" + input1 + "=" + (input / input1) + "\n" + input1 + ":" + input + "=" + (input1 / input)  );
+import ...
+
+public class MainActivity extends ActionBarActivity implements SubClass.MyCallback {
+
+    private TextView mResultTextView;
+    private SubClass mSubClass;
+
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        setContentView(R.layout.activity_main);
+
+        mResultTextView = (TextView)findViewById(R.id.textViewResult);
+
+        mSubClass = new SubClass();
+        mSubClass.registerCallBack(this);
     }
-}
+
+    public void onClick(View v) {
+        mSubClass.doSomething();
+    }
+
+    @Override
+    public void callBackReturn() {
+        mResultTextView.setText("Вызван метод обратного вызова");
+    }
+}    
